@@ -11,6 +11,8 @@
 # Family C pays $21 per hour before 9pm, then $15 the rest of the night
 # The time ranges are the same as the babysitter (5pm through 4am)
 
-def hours_worked(num1, num2):
-    total_hours = (num2 - num1)
-    return total_hours
+def hours_worked(start_time, end_time):
+    if start_time < 5:
+        start_time = 5
+    return end_time - start_time
+
