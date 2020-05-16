@@ -12,18 +12,58 @@
 # The time ranges are the same as the babysitter (5pm through 4am)
 
 def hours_worked(start_time, end_time):
-    check_start_time(start_time):
-    def check_end_time(end_time):
-    return end_time - start_time
-
-def check_start_time(start_time):
-    if start_time < 17:
+    if start_time < 17 and start_time not in range(0, 12 + 1):
         start_time = 17
-    return start_time
-def check_end_time(end_time):
-    if end_time not in range(12,24 + 1):
-        end_time += 24
-    return end_time
-        
+    if end_time > 4 and end_time in range(0,12 + 1):
+        end_time = 4
+    total_hours = (end_time - start_time)
+    return total_hours
+
+# def check_start_time(start_time):
+#     if start_time < 17:
+#         start_time = 17
+#     return start_time
+
+# def check_end_time(end_time):
+#     if end_time not in range(12,24 + 1):
+#         end_time += 24
+#     return end_time
+
+# def hours_worked():
+#     total_hours = (end-time - start_time)
+#         # return start_time
 
 
+
+# def hours_worked(start_time, end_time):
+#     if check_start_time(start_time):
+#         start_time = 17
+#         # return start_time
+
+#     elif check_end_time(end_time)
+#          end_time += 24
+#         #  return end_time
+
+#     else:
+#         pass
+
+#     total_hours = end_time - start_time
+#     return total_hours
+
+
+# def check_start_time(start_time):
+#     return start_time < 17
+#     #     start_time = 17
+#     # return start_time
+# def check_end_time(end_time):
+#     return end_time not in range(12,24 + 1)
+#     #     end_time += 24
+#     # return end_time
+
+# def calc_basic_pay(start_time, end_time):
+#     check_start_time(start_time):
+#     check_end_time(end_time):
+
+#     work_time = (end_time - start_time)
+#     sample_pay_rate = 10
+#     pay = (work_time * sample_pay_rate)
