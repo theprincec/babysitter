@@ -12,24 +12,29 @@
 # The time ranges are the same as the babysitter (5pm through 4am)
 
 def hours_worked(start_time, end_time):
-    if start_time > end_time:
-        raise Exception("shift end time is before start time")
-
     start_time = _check_start_time(start_time)
     end_time = _check_end_time(end_time)
+    if start_time > end_time:
+        raise Exception("shift end time is before start time")
     total_hours = (end_time - start_time)
+    print(start_time)
+    print(end_time)
     return total_hours
+    
 
 def _check_end_time(end_time):
-    if end_time > 4 and end_time in range(0,12 + 1):
+    if end_time not in range(0,4 +1) and end_time not in range(17,24 +1):
         end_time = 4
-    # if end_time in range(0,12 + 1):
-    #     end_time += 24
+    if end_time in range(0,4 + 1):
+        end_time += 24
     return end_time
 
 def _check_start_time(start_time):
-    if start_time < 17 and start_time not in range(0, 12 + 1):
+    if start_time not in range(0,4 +1) and start_time not in range(17,24 +1):
         start_time = 17
+    if start_time in range(0,4 +1):
+        start_time += 24
+    
     return start_time
 
 # def check_start_time(start_time):

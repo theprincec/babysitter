@@ -16,3 +16,6 @@ def test_exceptions_for_start_and_end_time():
         end_time = 17
         assert hours_worked(start_time,end_time)
     err.match("shift end time is before start time")
+
+def test_end_time_after_midnight():
+    assert hours_worked(0,5) == 4
